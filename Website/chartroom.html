@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- based off this pen https://codepen.io/maydie/pen/WvpzPG -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Page Title</title>
+		<link rel="stylesheet/less" type="text/css" href="styles.less" />
+		<link rel="stylesheet" href="chartroom.css">
+	</head>
+	<body>
+
+		<button onClick={App.populateArray}>Activate Lasers</button>
+		<div id="charts"></div>
+
+		<!-- Load React. -->
+		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
+		<!-- Load our React component. -->
+		<script type="text/babel" src="chartroom.js"></script>
+	</body>
+</html>

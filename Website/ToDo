@@ -1,0 +1,15 @@
+ToDo:
+
+Make the histogram look pretty
+
+Tie to database
+
+Tie to website
+
+Make the submit button create and instance of the class InputLog with the 2 text box results as the inputs.
+
+Display all the instances of InputLog as a histogram
+
+Hide the histogram until some guesses are submitted
+
+Make website logo

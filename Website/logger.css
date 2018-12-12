@@ -1,0 +1,350 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
+@import "compass/reset";
+$fontSans : 'Montserrat', sans-serif;
+ 
+
+body {
+	background: #f2f2f2
+	-webkit-font-smoothing: antialiased;
+  font-family: $fontSans;
+}
+
+ul li {
+	list-style-type: none;
+	display: inline;
+	padding-left: 10px;
+	padding-right: 2px;
+}
+
+input {
+	margin: 0.5%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#menu-container{
+	color: black;
+	height: auto;
+	background: linear-gradient(135deg, #f2f2f2, #f2f2f2 52%, #7f7f7f);
+	width: 100%;
+	display: flex;
+}
+
+#logo {
+	width: 20%;
+	margin: 10px;
+	text-align: center;
+	vertical-align: center;
+}
+
+#navigation-bar {
+	width: 80%;
+	margin: 10px;
+	text-align: right;
+}
+
+.nav-element{
+	color: white;
+	vertical-align: middle;
+}
+
+#intro-bin {
+    width:100%;
+    text-align: right;
+	background: linear-gradient(45deg, #f2f2f2, #f2f2f2 60%, #7f7f7f);
+	text-align: center;
+	display: flex;
+}
+
+.half {
+	width: 50%;
+	display: inline;
+}
+
+#main-msg {
+	color: #484848;
+	padding: 100px 0 0 0;
+}
+
+.container-names {
+	color: #484848; 
+	font-family: $fontSans;
+	padding-left: 10px;
+	padding-top: 20px;
+	border-top: 1px solid #dadada;
+  border-bottom: 1px solid #dadada;
+}
+
+.parent-container{
+	border: 4px outset #c5c5c5;
+}
+
+.content {
+	margin: 10px;
+	width: 100%;
+	display: flex;
+}
+
+.app-button{
+	width: 33%;
+	text-align: center;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.inline {
+	display: inline;
+	color: #484848
+}
+
+.app-name {
+	color: #484848
+}
+
+.applist {
+	overflow: hidden;
+	background-color: #0078FF;
+}
+
+*{ box-sizing:border-box;}
+
+
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: $fontSans;
+  text-align: center;
+  font-size: 1.5em;
+  padding: .5em 0;
+  margin-bottom: 1em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: $fontSans;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.0em;
+  padding: .5em 0;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+ul {
+ 	li {
+  		line-height: 2;
+   		font-weight: bold;
+  		font-family:$fontSans;
+  		font-size: .85em;text-transform: uppercase;
+  		clear: both;
+		// border-bottom: 1px solid $border;
+		&:before {
+			content: "\2023";
+			padding: 0 1em 0 0;
+		}
+ 	}
+ }
+
+// VARIABLES
+$default-delay: .2s;
+$bars: 15;
+$graph-height: 253px;
+
+// MIXINS
+
+//Horizontal Bar Color Mixin 
+@mixin stat-bar($color-dark, $color-light, $direction, $dir-webkit) {
+  background-image: -webkit-linear-gradient($dir-webkit, $color-light 0%, $color-light 47%, $color-dark 50%, $color-dark 100%);
+  background-image: linear-gradient($direction, $color-light 0%, $color-light 47%, $color-dark 50%, $color-dark 100%);
+}
+// Animation Mixin 
+@mixin bar-animation($time, $dimension) {
+  visibility: hidden;
+  @if $dimension == width {
+    width: 0;
+    -webkit-animation: animate-width; 
+    -moz-animation: animate-width;
+    animation: animate-width;
+  }
+  @if $dimension == height {
+    height: 0;
+    -webkit-animation: animate-height; 
+    -moz-animation: animate-height;
+    animation: animate-height;
+  }
+  animation-timing-function: cubic-bezier(.35,.95,.67,.99);
+  -webkit-animation-timing-function: cubic-bezier(.35,.95,.67,.99);
+  -moz-animation-timing-function: cubic-bezier(.35,.95,.67,.99);
+  animation-duration: $time*2;
+  -webkit-animation-duration: $time*2;
+  -moz-animation-duration: $time*2;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-moz-keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-webkit-keyframes animate-height {
+  0% {
+    height: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-moz-keyframes animate-height {
+  0% {
+    height: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes animate-height {
+  0% {
+    height: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+//STYLES
+#bar-chart {
+  height: 380px;
+  width: 70%;
+  position: relative;
+  margin: 50px auto 0;
+  * {
+   box-sizing: border-box; 
+  }
+  .graph {
+    height: 283px;
+    position: relative; 
+  }
+  .bars {
+    height: $graph-height;
+    padding: 0 2%;
+    position: absolute;
+    width: 100%;
+    z-index: 10; 
+  }
+  .bar-group {
+    display: block;
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 12%;
+    margin-right: 10%;
+    &:last-child {
+     margin-right: 0; 
+    }
+    .bar {
+      @include bar-animation($default-delay, height);
+      box-shadow: 1px 0 2px rgba(0,0,0,.15);
+      border: 1px solid #2d2d2d; 
+      border-radius: 3px 3px 0 0;
+      bottom: 0;
+      cursor: pointer;
+      height: 0;
+      position: absolute;
+      text-align: center;
+      width: 25%; 
+      &:nth-child(2) {
+        left: 35%;
+      }
+      &:nth-child(3) {
+        left: 70%;
+      }
+      span {
+       display: none; 
+      }
+    }
+    @for $i from 1 through 15 {
+      .bar-#{$i} {
+        animation-delay: $default-delay+.1*$i;
+        -webkit-animation-delay: $default-delay+.1*$i;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .x-axis {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    li {
+      float: left;
+      margin-right: 10.5%;
+      font-size: 11px;
+      width: 11.5%;
+      &:last-child {
+       margin-right: 0; 
+      }
+    }
+  }
+  .y-axis {
+    position: absolute;
+    text-align: right;
+    width: 100%; 
+    li {
+      border-top: 1px solid #4e5464;
+      display: block;
+      height: $graph-height/4;
+      width: 100%;
+      span {
+        display: block;
+        font-size: 11px;
+        margin: -10px 0 0 -60px;
+        padding: 0 10px;
+        width: 40px;  
+      }
+    }
+  }
+  .stat-1 {
+    @include stat-bar(#cf3a02, #ff4500, to right, left);
+  }
+  .stat-2 { 
+    @include stat-bar(#79a602, #b8f123, to right, left);
+  }
+  .stat-3 {
+    @include stat-bar(#0383a9, #00c5ff, to right, left);
+  }
+}

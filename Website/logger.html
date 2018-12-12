@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+    <title>The Self-published Projects of Ricardo Garcia | Onizen</title>
+		<link rel="stylesheet" href="logger.css">
+  </head>
+
+  
+  <body>
+		<div id="menu-container">
+			<a id="logo" href='index.html'><img src="img/bassnectar.png" alt="Onizen Logo">
+			</a>
+			<div id="navigation-bar">
+				<ul>
+					<li>
+						<a class="nav-element" href=''>Gallery</a>
+					</li>
+					<li>
+						<a class="nav-element" href='resume.html'>Resume</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="intro-bin">
+			<div class="half">
+				<h2 class="app-name">Contribute two integers between [-10,10] to the pool of random numbers
+				</h2>
+				<div class="half">
+				 	First Number: <input id="num1" type="number" name="fname" min="-10" max="10" required>
+				</div>
+				<div class="half">
+				 	Second Number: <input id="num2" type="number" name="lname" min="-10" max="10" required><br>
+				</div>
+				<input id="submitButton" type="submit" value="Submit">
+				<button id="rdmButton">Random</button>
+				<button id="multiRdmButton">Multi-random</button>
+				<button id="reset">Clear</button>
+			</div>
+			<div class="half">
+				<div class="wrap">
+					<h2 class="no-margin inline">Latest Entries:</h2><h2 id="num" class="inline"></h2><br>
+					<canvas id="myCanvas"></canvas>
+					<div id="histogram-1"></div>
+			  </div>
+			</div>
+		</div>
+		<h1 class="container-names">Data Logs</h1>
+		<div class="parent-container">
+			<div class="content">
+			</div>
+		</div>
+
+		<!-- Load React. -->
+		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+		<!-- Load our React component. -->
+		<script src="logger.js"></script>
+	</body>
+
+
+</html>

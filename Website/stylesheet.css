@@ -1,0 +1,97 @@
+body {
+	background: #f2f2f2;
+	margin: 0% 0% 0% 3%;
+}
+
+ul li {
+	list-style-type: none;
+	display: inline;
+	padding-left: 10px;
+	padding-right: 2px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#menu-container{
+	color: black;
+	height: auto;
+	background: linear-gradient(135deg, #f2f2f2, #f2f2f2 52%, #7f7f7f);
+	width: 100%;
+	display: flex;
+}
+
+#logo {
+	width: 20%;
+	margin: 10px;
+	text-align: center;
+	vertical-align: center;
+}
+
+#navigation-bar {
+	width: 80%;
+	margin: 10px;
+	text-align: right;
+}
+
+.nav-element{
+	color: white;
+	vertical-align: middle;
+}
+
+#intro-bin {
+    width:100%;
+    text-align: right;
+	background: linear-gradient(45deg, #f2f2f2, #f2f2f2 60%, #7f7f7f);
+	text-align: center;
+	display: flex;
+}
+
+.half {
+	width: 50%;
+	display: inline;
+}
+
+#main-msg {
+	color: #484848;
+	padding: 100px 0 0 0;
+}
+
+.container-names {
+	color: #484848; 
+	font-family: ;
+	padding-left: 10px;
+	padding-top: 20px;
+	border-top: 1px solid #c5c5c5;
+}
+
+.parent-container{
+	border: 4px outset #c5c5c5;
+}
+
+.content {
+	margin: 10px;
+	width: 100%;
+	display: flex;
+}
+
+.app-button{
+	width: 33%;
+	text-align: center;
+}
+
+.app-name {
+	color: #484848
+}
+
+.applist {
+	overflow: hidden;
+	background-color: #0078FF;
+}
+
+#data-table {
+	display: none;
+}
+
