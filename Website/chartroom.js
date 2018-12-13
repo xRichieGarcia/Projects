@@ -40,41 +40,21 @@ var App = React.createClass({
 	render: function () {
 		return (
 			<section>
-				
+				<button onClick={() => this.populateArray()}>
+				Activate Lasers
+				</button>
 				<Charts
 					data={ this.state.data }
-					labels={ this.state.series }
+					labels={ this.state.labels }
 					colors={ this.state.colors }
 					height={ 250 }
 				/>
 			
-				<Legend labels={ this.state.labels } colors={ this.state.colors } />
 			</section>
 		);
 	}
 });
 
-
-
-var Legend = React.createClass({
-	render: function () {
-		var labels = this.props.labels,
-			colors = this.props.colors;
-		
-		return (
-		<div className="Legend">
-			{ labels.map(function(label, labelIndex) {
-				return (
-				<div>
-					<span className="Legend--color" style={{ backgroundColor: colors[labelIndex % colors.length]  }} />
-					<span className="Legend--label">{ label }</span>
-				</div>
-				);
-			}) }
-		</div>
-		);
-	}
-});
 
 var Charts = React.createClass({
 	render: function () {

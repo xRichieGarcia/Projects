@@ -1,12 +1,36 @@
 ToDo:
 
+I want a graph that shows the toal number of times each number between 0,10 has been chosen. I have an array of the form num1= [1,1,2,4,2,1,0,8,7,10] coming from my database
+(var num1= "{{num1}}"; // introduces python variable to javascript file
+my histogram array should then be count1= [1,3,2,0,1,0,0,1,1,0,1].
+Something like:
+cnt = Counter()
+for i in num1:
+	cnt[i] += 1
+cnt
+
+output ---> Counter({0: 1, 1: 3, 2: 2,....})
+
+for (i in range(21)):
+	count1[i]= num1.count(i-10)
+
+Right now populateArray uses a double for loop to create the vaules of each bar. in the first level, tmp is reset to an empty array tmp = []; In the second loop the info for one graph is placed in the array one at a time using tmp.push(random_num)
+
+series is the number of graphs i'm making. serieLength is how many bars each chart will have. 
+
+for (var i range(21):
+	phaseSpace[i] = i-10
+
 Make the histogram look pretty
 
 Tie to database
 
 Tie to website
 
-Make the submit button create and instance of the class InputLog with the 2 text box results as the inputs.
+Make the submit button create and instance of the class InputLog with the 2 text box results as the inputs. Use a form with two integer input fields and an action that calls InputLog(num1, num2) which saves a new data pair to our database.
+
+graph-1 = InputLog.num1.all();
+graph-2 = InputLog.num1.all();
 
 Display all the instances of InputLog as a histogram
 
