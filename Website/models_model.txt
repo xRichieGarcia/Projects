@@ -1,0 +1,25 @@
+def Device('name')
+	click create new device button
+	register new device screen pops up (done in javascript)
+	type in name: 'Device-name-1'
+	define data type(note this app only handles 1-dimensional, numerical data): 'Temperature' 
+		(creates DataLog instance with Device-name-1 as ForeignKey)
+	would you like to add another data type?
+	If yes, define new data type which will create another DataLog instance with 
+		the same Device ForeignKey
+	first device will be 'Random-Device' and will have two DataLog instances tied to it with
+		data_type 'random-1' and 'random-2'. 
+
+def DataLog(device.object.name, data_type)
+	called during create new device process or under an individual device's settings to create new
+		instance with a user-defined data_type.
+	contains array that is fed to javascript file to present as graphs
+	constantly accessed to add new data to array
+
+def SubmitRandom(num-1, num-2)
+	called after hitting the submit button in the random number widget
+	log-1 = DataLog.objects.get(name='Random-Device', data_type='random-1')
+	log-2 = DataLog.objects.get(name='Random-Device', data_type='random-2')
+	log-1.push(num-1)
+	log-2.push(num-2) //adds num-1 and num-2 to their respective logs
+	cause histograms and statitics for random data to display

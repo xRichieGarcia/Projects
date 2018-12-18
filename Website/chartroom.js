@@ -10,7 +10,7 @@ var App = React.createClass({
 	getInitialState: function () {
 		return {
 			data: [],
-			series: ['France', 'Italy', 'England', 'Sweden', 'Germany'],
+			series: ['France', 'Italy', 'England', 'Sweden', 'Germany'], //get from DataLog
 			labels: ['cats', 'dogs', 'horses', 'ducks', 'cows'],
 			colors: ['#43A19E', '#7B43A1', '#F2317A', '#FF9824', '#58CF6C']
 		}
@@ -29,7 +29,7 @@ var App = React.createClass({
 			var tmp = [];
 			
 			for (var j = serieLength; j--; ) {
-				tmp.push(getRandomInt(0, 20));
+				tmp.push(getRandomInt(0, 20)); //get data from DataLog
 			}
 			
 			data.push(tmp);			
