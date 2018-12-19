@@ -7,31 +7,12 @@ body {
 	background-color: #f9f9f9;
 	display: flex;
 	align-items: flex-end;
-	padding: 50px;
+	padding: 40px;
 	// height: 25em;
-	
-	&.horizontal {
-		display: block;
-	}
-	
-	&.horizontal &--serie {
-		display: block;
-		margin: 0 0 30px 0;
-		border: 0;
-		
-		label {
-			position: relative;
-			top: auto;
-			right: auto;
-			left: 0;
-			bottom: auto;
-			padding: 0 0 10px 0;
-		}
-	}
 	
 	&--serie {
 		height: 100%;
-		margin: 0 30px 0 0;
+		margin: 0 50px 0 0;
 		display: inline-block;
 		flex: 1;
 		display: flex;
@@ -40,38 +21,26 @@ body {
 		animation: slideUp .6s;
 		position: relative;
 		border-bottom: 1px solid #c2c2c2;
-		
-		&.stacked {
-			display: block;
-		}
-		
+				
 		label {			
 			position: absolute;
 			left: 0;
 			right: 0;
-			bottom: -20px;
+			bottom: -40px;
 			font-family: Helvetica, sans-serif;
 			font-size: 10px;
 			text-align: center;
 			color: #808080;
 		}
 	}
-	
-	&.horizontal &--item {
-		display: block;
-		border-radius: 0 2px 2px 0;
-		margin: 0 0 5px 0;
-		height: 1em;
+  
+  &--item:hover {
+    opacity: 0.5;
+    }
 		
-		b {
-			position: absolute;
-			right: -20px;
-			top: .3em;
-		}
-	}
-	
 	&--item {
 		background-color: #43A19E;
+    
 		display: inline-block;
 		margin: 0 5px 0 0;
 		flex: 1;
@@ -80,50 +49,27 @@ body {
 		text-align: center;
 		border-radius: 2px 2px 0 0;
 		
-		&.layered {
-			position: absolute;
-			left: 5%;
-			right: 5%;
-			bottom: 0;
-			margin: 0;
-			
-			b {
-				position: absolute;
-				right: 0;
-			}
-		}
-		
-		&.stacked {
-			position: relative;
-			display: block;
-			border-radius: 0;
-		}
-		
-		b {
+		.values {
 			position: relative;
 			font-family: Helvetica, sans-serif;
 			font-size: 10px;
+			left: 0;
+			right: 0;
 			top: -20px;
+			text-align: center;
 			color: #43A19E;
 		}
-	}
-}
-
-.Legend {
-	&--color {
-		display: inline-block;
-		vertical-align: middle;
-		border-radius: 2px;
-		width: 16px;
-		height: 16px;
-	}
-	
-	&--label {
-		display: inline-block;
-		vertical-align: middle;
-		font-family: Helvetica, sans-serif;
-		font-size: 12px;
-		margin: 0 0 0 5px;
+		
+		.tags {
+			position: absolute;
+			font-family: Helvetica, sans-serif;
+			font-size: 10px;
+			left: 0;
+			right: 0;
+			bottom: -20px;
+			text-align: center;
+			color: #808080;
+		}
 	}
 }
 
